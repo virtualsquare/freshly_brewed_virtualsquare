@@ -74,7 +74,7 @@ virt-sysprep -a $PATHV2 \
 		--hostname $HOSTNAME \
 		--root-password password:virtualsquare \
 		--network \
-		--update --install xterm,xauth \
+		--update --install xterm,xauth,adduser \
 		--run-command 'echo "#!/bin/bash" > /root/get_v2all' \
 		--run-command "echo wget $V2PACK >> /root/get_v2all" \
 		--run-command "echo wget $V2PROJ >> /root/get_v2all" \
