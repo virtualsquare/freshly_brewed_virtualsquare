@@ -89,4 +89,5 @@ virt-sysprep -a $PATHV2 \
 		--run-command "sed -i 's/^.*PermitRootLogin.*$/PermitRootLogin Yes/' /etc/ssh/sshd_config" \
 		--run-command 'adduser --disabled-password --gecos "" user' \
 		--run-command 'echo "user:virtualsquare" | chpasswd' \
-		--run-command 'cat /root/append_to.bashrc >> /home/user/.bashrc'
+		--run-command 'cat /root/append_to.bashrc >> /home/user/.bashrc' \
+		--firstboot-command 'apt-get -y purge systemd-resolved && rm -f /etc/resolv.conf && printf "nameserver 1.1.1.1\n" >/etc/resolv.conf'
